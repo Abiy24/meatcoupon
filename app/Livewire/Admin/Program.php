@@ -35,6 +35,13 @@ class Program extends Component
         $this->modal('create-program')->close();
     }
 
+    public function deleteProgram(ModelProgram $program)
+    {
+        ModelProgram::whereId($program->id)->delete();
+        $this->modal('delete-program')->close();
+
+    }
+
     public function render()
     {
         return view('livewire.admin.program');

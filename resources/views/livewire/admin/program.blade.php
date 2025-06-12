@@ -12,14 +12,46 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
         @foreach ($this->programs as $program)
-            <x-card>
+            <x-card class="space-y-6">
                 <flux:heading size="xl">{{ $program->name }}</flux:heading>
                 <flux:subheading>{{ $program->description }}</flux:subheading>
+
+                <div>
+                    <flux:modal.trigger name="delete-program">
+                        <flux:button variant="danger">Delete</flux:button>
+                    </flux:modal.trigger>
+
+                    <flux:modal name="delete-program" class="w-md max-w-[calc(100dvw-3rem)]">
+                        <div class="space-y-6">
+                            <div>
+                                <flux:heading size="lg">Are you sure you want to delete this program?</flux:heading>
+
+                                <flux:subheading>{{ $program->name }}</flux:subheading>
+                            </div>
+
+                            <div class="flex gap-2">
+                                <flux:spacer />
+
+                                <flux:modal.close>
+                                    <flux:button variant="ghost">Cancel</flux:button>
+                                </flux:modal.close>
+
+                                <flux:button variant="danger" wire:click="deleteProgram({{ $program->id }})">Delete Program</flux:button>
+                            </div>
+                        </div>
+                    </flux:modal>
+                </div>
+
+
             </x-card>
         @endforeach
     </div>
 
-    <flux:modal name="create-program" class="w-full sm:w-md max-w-[calc(100dvw-3rem)]">
+
+
+
+
+    <flux:modal name="create-program" class="w-md max-w-[calc(100dvw-3rem)]">
         <form wire:submit="createProgram" class="space-y-6">
             <div>
                 <flux:heading size="lg">Create program</flux:heading>

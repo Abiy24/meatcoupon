@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('coupons', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(User::class)->cascade('delete');
-            $table->foreignIdFor(Program::class)->cascade('delete');
+            $table->foreignIdFor(User::class)->constrained()->onDelete('cascade');
+            $table->foreignIdFor(Program::class)->constrained()->onDelete('cascade');
             $table->string('code');
             $table->string('qr_code')->nullable();
             $table->timestamp('used_at')->nullable();

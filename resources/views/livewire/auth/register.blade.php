@@ -16,6 +16,28 @@
             :placeholder="__('Full name')"
         />
 
+        <!-- NBA -->
+        <flux:input
+            wire:model="nba"
+            :label="__('NBA')"
+            type="text"
+            required
+            autofocus
+            autocomplete="nba"
+            :placeholder="__('NBA')"
+        />
+
+        <!-- Dasa Wisma -->
+        <flux:input
+            wire:model="dasa_wisma"
+            :label="__('Dasa Wisma')"
+            type="text"
+            required
+            autofocus
+            autocomplete="dasa_wisma"
+            :placeholder="__('Dasa Wisma')"
+        />
+
         <!-- Email Address -->
         <flux:input
             wire:model="email"

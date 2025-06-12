@@ -16,9 +16,9 @@ Route::get('/', function () {
 //     ->middleware(['auth', 'verified'])
 //     ->name('dashboard');
 Route::get('dashboard', Dashboard::class)->middleware(['auth', 'verified'])->name('dashboard');
-Route::get('print', PrintCoupon::class)->middleware(['auth', 'verified'])->name('print.coupon');
-Route::get('/admin/user', Admin\User::class)->middleware(['auth', 'verified'])->name('admin.user');
-Route::get('/admin/program', Admin\Program::class)->middleware(['auth', 'verified'])->name('admin.program');
+// Route::get('print', PrintCoupon::class)->middleware(['auth', 'verified'])->name('print.coupon');
+// Route::get('/admin/user', Admin\User::class)->middleware(['auth', 'verified'])->name('admin.user');
+Route::get('/admin/program', Admin\Program::class)->middleware(['auth', 'verified', 'admin'])->name('admin.program');
 
 
 Route::middleware(['auth'])->group(function () {

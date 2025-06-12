@@ -8,7 +8,7 @@
                 $coupon = auth()->user()->coupons->firstWhere('program_id', $program->id);
             @endphp
 
-            <flux:heading size="lg">
+            <flux:heading size="xl">
                 {{ $program->name }}
             </flux:heading>
 

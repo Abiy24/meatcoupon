@@ -16,10 +16,13 @@
                     <flux:navlist.item icon="home" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>{{ __('Dashboard') }}</flux:navlist.item>
                     {{-- <flux:navlist.item icon="printer" :href="route('print.coupon')" :current="request()->routeIs('print.coupon')" wire:navigate>{{ __('Print') }}</flux:navlist.item> --}}
                 </flux:navlist.group>
-                <flux:navlist.group :heading="__('Admin')" class="grid">
-                    {{-- <flux:navlist.item icon="user" :href="route('admin.user')" :current="request()->routeIs('admin.user')" wire:navigate>{{ __('User') }}</flux:navlist.item> --}}
-                    <flux:navlist.item icon="rectangle-stack" :href="route('admin.program')" :current="request()->routeIs('admin.program')" wire:navigate>{{ __('Program') }}</flux:navlist.item>
-                </flux:navlist.group>
+
+                @can('admin')
+                    <flux:navlist.group :heading="__('Admin')" class="grid">
+                        {{-- <flux:navlist.item icon="user" :href="route('admin.user')" :current="request()->routeIs('admin.user')" wire:navigate>{{ __('User') }}</flux:navlist.item> --}}
+                        <flux:navlist.item icon="rectangle-stack" :href="route('admin.program')" :current="request()->routeIs('admin.program')" wire:navigate>{{ __('Program') }}</flux:navlist.item>
+                    </flux:navlist.group>
+                @endcan
             </flux:navlist>
 
             <flux:spacer />

@@ -1,10 +1,11 @@
 <?php
 
 use App\Livewire\Dashboard;
+use App\Livewire\Admin;
 use App\Livewire\PrintCoupon;
-use App\Livewire\Settings\Appearance;
-use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
+use App\Livewire\Settings\Password;
+use App\Livewire\Settings\Appearance;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -16,7 +17,8 @@ Route::get('/', function () {
 //     ->name('dashboard');
 Route::get('dashboard', Dashboard::class)->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('print', PrintCoupon::class)->middleware(['auth', 'verified'])->name('print.coupon');
-Route::get('/admin/user', PrintCoupon::class)->middleware(['auth', 'verified'])->name('admin.user');
+Route::get('/admin/user', Admin\User::class)->middleware(['auth', 'verified'])->name('admin.user');
+Route::get('/admin/program', Admin\Program::class)->middleware(['auth', 'verified'])->name('admin.program');
 
 
 Route::middleware(['auth'])->group(function () {

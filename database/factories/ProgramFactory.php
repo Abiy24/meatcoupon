@@ -18,6 +18,7 @@ class ProgramFactory extends Factory
     {
         return [
             'name' => fake()->name(),
+            'description' => fake()->paragraph(),
         ];
     }
 }

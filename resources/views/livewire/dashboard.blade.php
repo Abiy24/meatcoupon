@@ -29,9 +29,9 @@
             @endif
         </x-card>
         @endforeach
-    </div wire:ignore>
+    </div >
         <div >
-            <div
+            <div wire:ignore
             x-data="{
                 scanner: null,
                 init() {

@@ -2,15 +2,16 @@
 
 namespace App\Livewire\Admin;
 
-use Livewire\Component;
 use App\Models\Program as ModelProgram;
 use Livewire\Attributes\Computed;
 use Livewire\Attributes\Validate;
+use Livewire\Component;
 
 class Program extends Component
 {
     #[Validate('required|string|max:255')]
     public string $name;
+
     #[Validate('required|string|max:255')]
     public string $description;
 

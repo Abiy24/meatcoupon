@@ -3,13 +3,13 @@
 namespace App\Livewire\Auth;
 
 use App\Models\User;
-use Livewire\Component;
-use Illuminate\Support\Str;
-use Livewire\Attributes\Layout;
-use Illuminate\Validation\Rules;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Auth\Events\Registered;
+use Illuminate\Support\Str;
+use Illuminate\Validation\Rules;
+use Livewire\Attributes\Layout;
+use Livewire\Component;
 
 #[Layout('components.layouts.auth')]
 class Register extends Component
@@ -17,7 +17,9 @@ class Register extends Component
     public string $name = '';
 
     public string $nba = '';
+
     public string $dasa_wisma = '';
+
     public string $email = '';
 
     public string $password = '';

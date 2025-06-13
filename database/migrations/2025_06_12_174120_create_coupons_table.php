@@ -2,9 +2,9 @@
 
 use App\Models\Program;
 use App\Models\User;
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
@@ -17,8 +17,9 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(User::class)->constrained()->onDelete('cascade');
             $table->foreignIdFor(Program::class)->constrained()->onDelete('cascade');
-            $table->string('code');
-            $table->string('qr_code')->nullable();
+            $table->string('code')->nullable();
+            $table->text('encrypted_code')->nullable();
+            $table->text('qr_code')->nullable();
             $table->timestamp('used_at')->nullable();
             $table->timestamps();
         });

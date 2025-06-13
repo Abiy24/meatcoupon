@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('nba');
             $table->string('dasa_wisma');
             $table->boolean('is_admin')->default(false);
-            $table->string('encription_key')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

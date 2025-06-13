@@ -3,9 +3,9 @@
 namespace Database\Seeders;
 
 use App\Models\Coupon;
-use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Program;
+// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -21,10 +21,10 @@ class DatabaseSeeder extends Seeder
         ]);
         User::factory(100)->create();
         Program::factory()->create([
-            'name' => 'Qurban 2025'
+            'name' => 'Qurban 2025',
         ]);
         Program::factory()->create([
-            'name' => 'Qurban 2026'
+            'name' => 'Qurban 2026',
         ]);
         Coupon::factory(100)->create();
     }

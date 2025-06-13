@@ -16,10 +16,11 @@ class EnsureAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (!Auth::check() || !Auth::user()->is_admin) {
+        if (! Auth::check() || ! Auth::user()->is_admin) {
             // abort(403);
             return redirect(route('dashboard'));
         }
+
         return $next($request);
     }
 }

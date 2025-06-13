@@ -2,9 +2,8 @@
 
 namespace Database\Factories;
 
-use App\Models\User;
 use App\Models\Program;
-use Illuminate\Support\Str;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -22,7 +21,8 @@ class CouponFactory extends Factory
         return [
             'user_id' => User::inRandomOrder()->value('id'),
             'program_id' => Program::inRandomOrder()->value('id'),
-            'code' => Str::random(10),
+            'code' => null,
+            'encrypted_code' => null,
             'qr_code' => null,
             'used_at' => null,
         ];

@@ -11,10 +11,9 @@ class Coupon extends Model
     /** @use HasFactory<\Database\Factories\CouponFactory> */
     use HasFactory;
 
-    protected $guarded =[
+    protected $guarded = [
         'id',
     ];
-
 
     public function user(): BelongsTo
     {

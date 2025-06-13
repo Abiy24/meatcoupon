@@ -32,7 +32,6 @@ class UserFactory extends Factory
             'nba' => fake()->word(),
             'dasa_wisma' => fake()->word(),
             'is_admin' => false,
-            'encription_key' => Str::random(20),
         ];
     }
 

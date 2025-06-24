@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@admin.com',
         ]);
         User::factory(100)->create();
+        User::factory(100)->valid()->create();
         Program::factory()->create([
             'name' => 'Qurban 2025',
         ]);

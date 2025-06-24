@@ -32,6 +32,7 @@ class UserFactory extends Factory
             'nba' => fake()->word(),
             'dasa_wisma' => fake()->word(),
             'is_admin' => false,
+            'is_valid' => false,
         ];
     }
 
@@ -49,6 +50,14 @@ class UserFactory extends Factory
     {
         return $this->state(fn (array $attributes) => [
             'is_admin' => true,
+            'is_valid' => true,
         ]);
     }
+    public function valid(): static
+    {
+        return $this->state(fn (array $attributes) => [
+            'is_valid' => true,
+        ]);
+    }
+
 }

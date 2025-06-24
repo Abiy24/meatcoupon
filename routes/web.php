@@ -19,7 +19,7 @@ Route::get('dashboard', Dashboard::class)->middleware(['auth', 'verified'])->nam
 // Route::get('print', PrintCoupon::class)->middleware(['auth', 'verified'])->name('print.coupon');
 // Route::get('/admin/user', Admin\User::class)->middleware(['auth', 'verified'])->name('admin.user');
 Route::get('/admin/program', Admin\Program::class)->middleware(['auth', 'verified', 'admin'])->name('admin.program');
-
+Route::get('/admin/user', Admin\User::class)->middleware(['auth', 'verified', 'admin'])->name('admin.user');
 Route::middleware(['auth'])->group(function () {
     Route::redirect('settings', 'settings/profile');
 

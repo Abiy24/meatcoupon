@@ -37,10 +37,16 @@ class Dashboard extends Component
                 ->where('code', $code)
                 ->first();
 
+            if ($coupon->used_at!==null) {
+                $this->is_valid = false;
+                $this->result = 'Used code.';
+                return;
+            }
             if ($coupon) {
                 $coupon->used_at = now();
                 $coupon->save();
                 $this->is_valid = true;
+                return;
             }
         } catch (\Exception $e) {
             $this->result = 'Invalid or tampered code.';

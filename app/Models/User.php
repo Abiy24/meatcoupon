@@ -50,6 +50,7 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
             'is_admin' => 'bool',
+            'is_valid' => 'bool',
         ];
     }
 

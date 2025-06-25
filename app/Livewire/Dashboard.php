@@ -15,15 +15,11 @@ use Livewire\Attributes\Computed;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Title;
 use Livewire\Component;
-
 class Dashboard extends Component
 {
     public string $key = '';
-
     public string $result = '';
-
     public $is_valid = false;
-
     public function decrypt()
     {
         try {
